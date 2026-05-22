@@ -1,0 +1,40 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/* Rofi Config for Google Search) */
+
+@import "~/.config/rofi/config.rasi"  
+
+/* ---- Window ---- */
+window {
+    width:            650px;
+    location:         center;
+    anchor:           center;
+    y-offset:         -15%;             /* Moves it slightly up like Spotlight */
+    
+    background-color: #11111199;        /* 60% Transparent Deep Charcoal */
+    border:           1px;
+    border-color:     #616161;          /* Pure White border for contrast */
+    border-radius:    12px;
+    
+    /* Removes the message box and results to show ONLY the entry bar */
+    children:         [ "entry" ];      
+}
+
+/* ---- Entry ---- */ 
+entry {
+    enabled:          true;
+    expand:           true;
+    padding:          25px;
+    background-color: transparent;
+    text-color:       #ffffff;
+    
+    /* Centers the text and sets placeholder */
+    horizontal-align: 0.5;
+    placeholder:      "🔍 Web Search";     /* Removed the emoji as requested */
+    placeholder-color: rgba(255, 255, 255, 20%);
+}
+
+/* ---- Mainbox (Safety Override) ---- */
+mainbox {
+    background-color: transparent;
+    children:         [ "entry" ];      /* Ensures nothing else renders */
+}
