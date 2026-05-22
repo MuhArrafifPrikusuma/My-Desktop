@@ -1,0 +1,40 @@
+/* ---- Main Window ---- */
+window {
+    background-color: rgba(10, 10, 10, 0.6); /* Transparent Dark */
+    border: 2px solid #00ffff;               /* Teal Border */
+    border-radius: 12px;
+}
+
+/* ---- Search Bar (Top) ---- */
+#search-entry {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    border-radius: 8px;
+    margin: 15px;
+    color: #ffffff;
+}
+
+/* ---- Sidebar (Left) ---- */
+#left-box {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-right: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+/* ---- Category Buttons ---- */
+#category-button {
+    color: #aaaaaa;
+}
+
+#category-button:checked {
+    color: #00ffff;
+}
+
+/* ---- App Items ---- */
+#item:hover, #item:selected {
+    background-color: rgba(0, 255, 255, 0.2); /* Teal Glow */
+    border-radius: 6px;
+}
+
+#item-text {
+    color: #ffffff;
+}

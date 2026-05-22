@@ -1,0 +1,121 @@
+/***** ---- Configuration ---- *****/
+configuration {
+    modi:                       "drun";
+    show-icons:                 true;
+    display-drun:               "🔍";
+    
+    /* Crucial for preserving original icons */
+    icon-theme:                 "default"; 
+}
+
+/***** ---- Global Variables ---- *****/
+* {
+    /* Contrast Monochrome with Transparency */
+    background:     #11111199;            /* 60% Transparent Deep Charcoal */
+    background-alt: rgba(255, 255, 255, 5%);
+    foreground:     #ffffff;              /* Pure white text */
+    accent:         #ffffff;              /* White accent for the border */
+    
+    background-color: transparent;
+}
+
+/***** ---- Main Window ---- *****/
+window {
+    location:                    center;
+    anchor:                      center;
+    width:                       650px;
+    x-offset:                    0px;
+    y-offset:                    -15%;
+    
+    enabled:                     true;
+    border:                      1px ;
+    border-radius:               12px;
+    
+    /* Using explicit background rather than @background for strict transparency */
+    background-color:            #11111199; 
+}
+
+/***** ---- Main Box ---- *****/
+mainbox {
+    enabled:                     true;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+/***** ---- Input Bar ---- *****/
+inputbar {
+    enabled:                     true;
+    padding:                     25px;
+    background-color:            rgba(255, 255, 255, 3%);
+    border:                      0px 0px 1px 0px;
+    border-color:                rgba(255, 255, 255, 10%);
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      text;
+    placeholder:                 "Search 🤓";
+    placeholder-color:           rgba(255, 255, 255, 20%);
+}
+
+/***** ---- Listview ---- *****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       8;
+    scrollbar:                   false;
+    padding:                     10px 15px 15px 15px;
+    spacing:                     5px;
+    background-color:            transparent;
+    
+    /* These properties handle the "hide until typing" logic */
+    fixed-height:                false;
+    dynamic:                     true;
+    
+    /* This is the key: it collapses the list when no input is detected */
+    fixed-columns:               true; 
+}
+
+/***** ---- Elements ---- *****/
+element {
+    enabled:                     true;
+    padding:                     10px;
+    border-radius:               8px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    background-color:            #ffffff;  /* Solid white selection bar */
+    text-color:                  #000000;  /* Pure black text when selected */
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+}
+
+element-icon {
+    size:                        32px;
+    background-color:            transparent;
+    
+    /* Force original icons to show, even when selected */
+    image:                       inherit; 
+    text-color:                  inherit;
+}
+
+/* Ensure selected icons use original colors */
+element selected.normal element-icon {
+    image: inherit; 
+    text-color: inherit;
+}
