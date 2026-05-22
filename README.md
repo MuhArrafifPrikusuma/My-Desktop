@@ -34,3 +34,24 @@
 
     # 4. Fire the deployment pipeline script
     ./install.sh
+---
+```
+## 🗄️ Safe Automated Backup Engine
+You don't have to worry about losing your personal settings. When ./install.sh starts running, it checks your existing local machine directories for file overlap. If it detects pre-existing settings for components like Hyprland, Waybar, or Neovim, it handles them gracefully by creating a secure backup index, ⚠️ I recommend creating backup by yourself for safety reasons in case the install script failed to create a backup.
+
+## 💎 Custom Easing Configurations (Anti-Flicker)
+To keep your display rendering smoothly on high-refresh laptop panels, this environment maps standard window border transformations across a dedicated continuous linear curve. This prevents frame-rate desynchronization and stops border flickering dead in its tracks.
+
+The parameters reside securely inside your local ~/.config/hypr/UserConfigs/UserAnimations.conf block:
+
+        animations {
+          enabled = true
+    
+          # Establish a perfect linear transition vector
+          bezier = borderFluid, 0.0, 0.0, 1.0, 1.0
+
+          # Distribute border translations over an ultra-smooth 150-frame matrix
+          animation = border, 1, 15, borderFluid
+          animation = borderangle, 1, 150, borderFluid, loop 
+      }
+Note: There are some weird things happening when you turn off your rendering engine and turn it back on sometimes the borders starts to flicker and if this happend just disable animations and then reboot your system
