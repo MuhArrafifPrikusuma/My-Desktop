@@ -12,8 +12,7 @@ window {
     
     background-color: #11111199;        /* 60% Transparent Deep Charcoal */
     border:           1px;
-    border-color:     #616161;          /* Pure White border for contrast */
-    border-radius:    12px;
+    border-color:     #61657a;          /* Pure White border for contrast */
     
     /* Removes the message box and results to show ONLY the entry bar */
     children:         [ "entry" ];      
