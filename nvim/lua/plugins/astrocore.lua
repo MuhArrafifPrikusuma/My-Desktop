@@ -1,4 +1,3 @@
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -9,7 +8,7 @@ return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
   opts = {
-    colorscheme = "tokyonight-moon",
+    colorscheme = "catpuccin",
     -- Configure core features of AstroNvim
     features = {
       large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
@@ -20,15 +19,8 @@ return {
       notifications = true, -- enable notifications at start
     },
 
-    
     -- FORCE-INJECT OUR NEON BLUE HIGHLIGHTS GLOBALLY
-    highlights = {
-      all = {
-        -- Make the animated vertical scope line glow neon cyan
-        MiniIndentscopeSymbol = { fg = "#00f0ff" },
-        MiniIndentscopeSymbolPrefix = { fg = "#00f0ff" },
-      },
-    },
+
     -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
     diagnostics = {
       virtual_text = true,
@@ -61,7 +53,7 @@ return {
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
-	icons_enabled = true,
+        icons_enabled = true,
       },
     },
     -- Mappings can be configured through AstroCore as well.
