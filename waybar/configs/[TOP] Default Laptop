@@ -27,7 +27,7 @@
     "custom/playerctl",
     "custom/separator#blank",
     "hyprland/window",
-    "custom/mysql"  // <-- Just the name goes here!
+    "custom/mysql"  // !
   ],
 
   "modules-center": [
